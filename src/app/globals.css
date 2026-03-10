@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8B5CF6; /* Purple for branding */
+  --color-secondary: #FACC15; /* Yellow for CTA */
+  --color-navy: #0F172A; /* Deep blue for text and backgrounds */
+  --color-brand-blue: #2563EB; /* Bright blue for secondary branding */
+  --color-light: #F8FAFC;
+  --color-muted: #64748B;
+  --color-background: #ffffff;
+  --color-foreground: #0F172A;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Lexend", sans-serif;
+  
+  --radius-premium: 2.5rem;
+}
+
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .premium-card {
+    @apply bg-white border border-gray-100 rounded-[--radius-premium] shadow-sm hover:shadow-xl transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-navy px-8 py-4 rounded-full font-bold hover:scale-105 active:scale-95 flex items-center gap-2 transition-all;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500;
+  }
+}
